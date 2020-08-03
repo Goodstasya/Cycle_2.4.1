@@ -7,11 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class StatsServiceTest {
     @Test
     void shouldSumAllSales() {
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
         StatsService ss = new StatsService();
 
         int expected = 180;
 
-        int actual = ss.SumAllSales();
+        int actual = ss.sumAllSales(sales);
 
         boolean passed = expected == actual;
 
@@ -22,9 +24,11 @@ public class StatsServiceTest {
     void shouldAvgSales() {
         StatsService ss = new StatsService();
 
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
         float expected = 15;
 
-        float actual = ss.AvgSales();
+        float actual = ss.avgSales(sales);
 
         boolean passed = expected == actual;
 
@@ -34,10 +38,11 @@ public class StatsServiceTest {
     @Test
     void shouldMonthOfMaxSales() {
         StatsService ss = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 8;
 
-        int actual = ss.MonthOfMaxSales();
+        int actual = ss.monthOfMaxSales(sales);
 
         boolean passed = expected == actual;
 
@@ -47,10 +52,11 @@ public class StatsServiceTest {
     @Test
     void shouldMonthOfMinSales() {
         StatsService ss = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 9;
 
-        int actual = ss.MonthOfMinSales();
+        int actual = ss.monthOfMinSales(sales);
 
         boolean passed = expected == actual;
 
@@ -60,10 +66,11 @@ public class StatsServiceTest {
     @Test
     void shouldNumOfMonthBelowAvg() {
         StatsService ss = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
 
-        int actual = ss.NumOfMonthBelowAvg();
+        int actual = ss.numOfMonthBelowAvg(sales);
 
         boolean passed = expected == actual;
 
@@ -75,9 +82,11 @@ public class StatsServiceTest {
     void shouldNumOfMonthAboveAvg() {
         StatsService ss = new StatsService();
 
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
         int expected = 5;
 
-        int actual = ss.NumOfMonthAboveAvg();
+        int actual = ss.numOfMonthAboveAvg(sales);
 
         boolean passed = expected == actual;
 

@@ -1,9 +1,7 @@
 package ru.netology.stats;
 
 public class StatsService {
-    int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-
-    public int SumAllSales() {
+    public int sumAllSales(int[] sales) {
         int sum = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -13,11 +11,11 @@ public class StatsService {
         return sum;
     }
 
-    public float AvgSales() {
-        return (float) SumAllSales() / (float) sales.length;
+    public float avgSales(int[] sales) {
+        return (float) sumAllSales(sales) / (float) sales.length;
     }
 
-    public int MonthOfMaxSales() {
+    public int monthOfMaxSales(int[] sales) {
         int m = 0;
         int maxSale = 0;
 
@@ -31,7 +29,7 @@ public class StatsService {
         return m;
     }
 
-    public int MonthOfMinSales() {
+    public int monthOfMinSales(int[] sales) {
         int m = 0;
         int minSale = sales[0];
 
@@ -45,9 +43,9 @@ public class StatsService {
         return m;
     }
 
-    public int NumOfMonthBelowAvg() {
+    public int numOfMonthBelowAvg(int[] sales) {
         int n = 0;
-        float avg = AvgSales();
+        float avg = avgSales(sales);
 
         for (int i = 0; i < sales.length; i++) {
             if ((float)sales[i] < avg) {
@@ -58,9 +56,9 @@ public class StatsService {
         return n;
     }
 
-    public int NumOfMonthAboveAvg() {
+    public int numOfMonthAboveAvg(int[] sales) {
         int n = 0;
-        float avg = AvgSales();
+        float avg = avgSales(sales);
 
         for (int i = 0; i < sales.length; i++) {
             if ((float)sales[i] > avg) {
